@@ -2,6 +2,10 @@
     --color-background-button: #008BBA;
     --color-background-button-hover: #037094;
     --color-white: #FFF;
+    --color-success: #0CD326;
+    --color-button-copy-disabled: #424141;
+    --color-button-copy-disabled-hover: #302F2F;
+    --color-error: red;
 }
 
 * {
@@ -45,7 +49,24 @@ button {
     transition: calc(.5s)
 }
 
+#copy[disabled] {
+    background-color: var(--color-button-copy-disabled);
+}
+
+#copy[disabled]:hover {
+    background-color: var(--color-button-copy-disabled-hover);
+}
+
 button:hover {
     background-color: var(--color-background-button-hover);
     transition: .5s;
+}
+
+.success-copy {
+    font-size: .75em;
+    color: var(--color-success);
+}
+
+.error {
+    color: red;
 }
