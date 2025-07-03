@@ -1,22 +1,27 @@
 let cpfSection = document.querySelector(".cpf");
 let generateBtn = document.querySelector("#generate");
 let copyAreaBtn = document.querySelector("#copy");
+let cpfElement = document.querySelector("#cpf-element")
 
 generateBtn.addEventListener("click", () => {
-
-   generateBaseNumberCPF();
-    
+    cpfElement.innerText = generateBaseNumberCPF();
 })
 
 copyAreaBtn.addEventListener("click", () => {
-    
+    navigator.clipboard.writeText(cpfElement.innerText).then(
+        () => {
+            console.log(`${cpfElement.innerText} copiado!`)
+        },
+        (err) => {
+            console.log(`${cpfElement.innerText} não foi copiado, houve um erro!`)
+        }
+    )
 })
 
 function generateBaseNumberCPF() {
     let baseNumber = String(Math.floor(Math.random() * 99999999)).padStart(8, "0");
 
-    let completeCPF = formatCPF(createCPFWithBusinessFields(baseNumber));
-    console.log(completeCPF);
+    return formatCPF(createCPFWithBusinessFields(baseNumber));
     
 }
 
