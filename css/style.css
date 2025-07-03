@@ -1,0 +1,51 @@
+:root {
+    --color-background-button: #008BBA;
+    --color-background-button-hover: #037094;
+    --color-white: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25em;
+    height: 10em;
+    gap: 1.5em;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    align-items: end;
+    justify-content: space-evenly;
+    
+}
+
+button {
+    background-color: var(--color-background-button);
+    padding: .5em;
+    border: none;
+    border-radius: .25em;
+    color: var(--color-white);
+    transition: calc(.5s)
+}
+
+button:hover {
+    background-color: var(--color-background-button-hover);
+    transition: .5s;
+}
